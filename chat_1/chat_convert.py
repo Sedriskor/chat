@@ -16,22 +16,19 @@ def convert(lines): #convert into lines
         elif line == 'Tom':
             person = 'Tom'
             continue
-
-        if person: #如果person有值 執行：
+        if person: #如果person有值:執行
             new.append(person + ': ' + line)
-    return new        
+    return new
 
-def write_file(filename, lines): #putput file
+def write_file(filename, lines): #output file
     with open(filename, 'w', encoding='utf-8') as f: 
         for line in lines:
             f.write(line + '\n') 
 
 def main():
     lines = read_file('input.txt')
-    print(lines)
     lines = convert(lines)
-    print(lines)
-    write_file('out.txt', lines)
+    write_file('output.txt', lines)
 
 main()
 
